@@ -15,28 +15,31 @@ namespace ChartsApp
 {
     public partial class Main : MaterialForm
     {
-        public CityRepository cityRepo = CityRepository.getInstance();
+        private FormContinuous frmContinuous;
+        private FormSeries frmSeries;
 
         public Main()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Console.WriteLine(this.cityRepo.GetCount());
+            this.frmContinuous = new FormContinuous();
+            this.frmSeries = new FormSeries();
         }
 
-        private void btnContinuous_Click(object sender, EventArgs e)
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            FormContinuous frmContinuous = new FormContinuous();
-            frmContinuous.Show();
+            this.frmContinuous = new FormContinuous();
+            this.frmContinuous.Show();
         }
 
-        private void btnSeries_Click(object sender, EventArgs e)
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
-            FormSeries frmSeries = new FormSeries();
-            frmSeries.Show();
+            this.frmSeries = new FormSeries();
+            this.frmSeries.Show();
         }
     }
 }

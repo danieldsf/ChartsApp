@@ -8,24 +8,13 @@ namespace ChartsApp
         public FormContinuous()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void FormContinuous_Load(object sender, EventArgs e)
         {
             CityRepository cityRepo = CityRepository.getInstance();
-
-            /**
-             valor  mínimo [OK] 
-             valor  máximo [OK]  
-             amplitude  [OK] 
-             média [OK]
-             mediana [OK]   
-             moda  [OK]  
-             variância [OK]
-             desvio padrão [OK]
-             coeficiente de variação
-            **/
-
+            
             //Showing Data:
             lblMaxValue.Text += String.Format("{0}: [{1}, {2}]", cityRepo.GetMax().Population.ToString("0,0"), cityRepo.GetMax().Name, cityRepo.GetMax().State);
             lblMinValue.Text += String.Format("{0}: [{1}, {2}]", cityRepo.GetMin().Population.ToString("0,0"), cityRepo.GetMin().Name, cityRepo.GetMin().State);
@@ -38,7 +27,7 @@ namespace ChartsApp
             lblCoeficienteVariacao.Text += cityRepo.GetCoeficienteVariacao().ToString("p");
         }
 
-        private void btnGoBack_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -28,155 +28,197 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblAverageValue = new System.Windows.Forms.Label();
-            this.lblMinValue = new System.Windows.Forms.Label();
-            this.lblMaxValue = new System.Windows.Forms.Label();
-            this.btnGoBack = new System.Windows.Forms.Button();
-            this.lblModa = new System.Windows.Forms.Label();
-            this.lblMediana = new System.Windows.Forms.Label();
-            this.lblVariancia = new System.Windows.Forms.Label();
-            this.lblDesvioPadrao = new System.Windows.Forms.Label();
-            this.lblAmplitude = new System.Windows.Forms.Label();
-            this.lblCoeficienteVariacao = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlContinuos = new System.Windows.Forms.Panel();
+            this.lblCoeficienteVariacao = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAmplitude = new MaterialSkin.Controls.MaterialLabel();
+            this.lblDesvioPadrao = new MaterialSkin.Controls.MaterialLabel();
+            this.lblVariancia = new MaterialSkin.Controls.MaterialLabel();
+            this.lblMediana = new MaterialSkin.Controls.MaterialLabel();
+            this.lblModa = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAverageValue = new MaterialSkin.Controls.MaterialLabel();
+            this.lblMinValue = new MaterialSkin.Controls.MaterialLabel();
+            this.lblMaxValue = new MaterialSkin.Controls.MaterialLabel();
+            this.btnBack = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pnlContinuos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlContinuos
             // 
-            this.panel1.Controls.Add(this.lblCoeficienteVariacao);
-            this.panel1.Controls.Add(this.lblAmplitude);
-            this.panel1.Controls.Add(this.lblDesvioPadrao);
-            this.panel1.Controls.Add(this.lblVariancia);
-            this.panel1.Controls.Add(this.lblMediana);
-            this.panel1.Controls.Add(this.lblModa);
-            this.panel1.Controls.Add(this.lblAverageValue);
-            this.panel1.Controls.Add(this.lblMinValue);
-            this.panel1.Controls.Add(this.lblMaxValue);
-            this.panel1.Location = new System.Drawing.Point(12, 78);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 247);
-            this.panel1.TabIndex = 0;
+            this.pnlContinuos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlContinuos.Controls.Add(this.lblCoeficienteVariacao);
+            this.pnlContinuos.Controls.Add(this.lblAmplitude);
+            this.pnlContinuos.Controls.Add(this.lblDesvioPadrao);
+            this.pnlContinuos.Controls.Add(this.lblVariancia);
+            this.pnlContinuos.Controls.Add(this.lblMediana);
+            this.pnlContinuos.Controls.Add(this.lblModa);
+            this.pnlContinuos.Controls.Add(this.lblAverageValue);
+            this.pnlContinuos.Controls.Add(this.lblMinValue);
+            this.pnlContinuos.Controls.Add(this.lblMaxValue);
+            this.pnlContinuos.Location = new System.Drawing.Point(12, 78);
+            this.pnlContinuos.Name = "pnlContinuos";
+            this.pnlContinuos.Size = new System.Drawing.Size(455, 247);
+            this.pnlContinuos.TabIndex = 0;
+            // 
+            // lblCoeficienteVariacao
+            // 
+            this.lblCoeficienteVariacao.AutoSize = true;
+            this.lblCoeficienteVariacao.Depth = 0;
+            this.lblCoeficienteVariacao.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblCoeficienteVariacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCoeficienteVariacao.Location = new System.Drawing.Point(23, 221);
+            this.lblCoeficienteVariacao.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCoeficienteVariacao.Name = "lblCoeficienteVariacao";
+            this.lblCoeficienteVariacao.Size = new System.Drawing.Size(178, 19);
+            this.lblCoeficienteVariacao.TabIndex = 8;
+            this.lblCoeficienteVariacao.Text = "Coeficiente de Variação: ";
+            // 
+            // lblAmplitude
+            // 
+            this.lblAmplitude.AutoSize = true;
+            this.lblAmplitude.Depth = 0;
+            this.lblAmplitude.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAmplitude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAmplitude.Location = new System.Drawing.Point(23, 193);
+            this.lblAmplitude.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAmplitude.Name = "lblAmplitude";
+            this.lblAmplitude.Size = new System.Drawing.Size(85, 19);
+            this.lblAmplitude.TabIndex = 7;
+            this.lblAmplitude.Text = "Amplitude: ";
+            // 
+            // lblDesvioPadrao
+            // 
+            this.lblDesvioPadrao.AutoSize = true;
+            this.lblDesvioPadrao.Depth = 0;
+            this.lblDesvioPadrao.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblDesvioPadrao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDesvioPadrao.Location = new System.Drawing.Point(23, 168);
+            this.lblDesvioPadrao.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblDesvioPadrao.Name = "lblDesvioPadrao";
+            this.lblDesvioPadrao.Size = new System.Drawing.Size(114, 19);
+            this.lblDesvioPadrao.TabIndex = 6;
+            this.lblDesvioPadrao.Text = "Desvio Padrao: ";
+            // 
+            // lblVariancia
+            // 
+            this.lblVariancia.AutoSize = true;
+            this.lblVariancia.Depth = 0;
+            this.lblVariancia.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblVariancia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblVariancia.Location = new System.Drawing.Point(23, 137);
+            this.lblVariancia.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblVariancia.Name = "lblVariancia";
+            this.lblVariancia.Size = new System.Drawing.Size(80, 19);
+            this.lblVariancia.TabIndex = 5;
+            this.lblVariancia.Text = "Variancia: ";
+            // 
+            // lblMediana
+            // 
+            this.lblMediana.AutoSize = true;
+            this.lblMediana.Depth = 0;
+            this.lblMediana.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMediana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMediana.Location = new System.Drawing.Point(23, 111);
+            this.lblMediana.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblMediana.Name = "lblMediana";
+            this.lblMediana.Size = new System.Drawing.Size(74, 19);
+            this.lblMediana.TabIndex = 4;
+            this.lblMediana.Text = "Mediana: ";
+            // 
+            // lblModa
+            // 
+            this.lblModa.AutoSize = true;
+            this.lblModa.Depth = 0;
+            this.lblModa.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblModa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblModa.Location = new System.Drawing.Point(23, 83);
+            this.lblModa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblModa.Name = "lblModa";
+            this.lblModa.Size = new System.Drawing.Size(55, 19);
+            this.lblModa.TabIndex = 3;
+            this.lblModa.Text = "Moda: ";
             // 
             // lblAverageValue
             // 
             this.lblAverageValue.AutoSize = true;
+            this.lblAverageValue.Depth = 0;
+            this.lblAverageValue.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAverageValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblAverageValue.Location = new System.Drawing.Point(23, 56);
+            this.lblAverageValue.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAverageValue.Name = "lblAverageValue";
-            this.lblAverageValue.Size = new System.Drawing.Size(42, 13);
+            this.lblAverageValue.Size = new System.Drawing.Size(58, 19);
             this.lblAverageValue.TabIndex = 2;
             this.lblAverageValue.Text = "Media: ";
             // 
             // lblMinValue
             // 
             this.lblMinValue.AutoSize = true;
+            this.lblMinValue.Depth = 0;
+            this.lblMinValue.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMinValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblMinValue.Location = new System.Drawing.Point(23, 32);
+            this.lblMinValue.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMinValue.Name = "lblMinValue";
-            this.lblMinValue.Size = new System.Drawing.Size(73, 13);
+            this.lblMinValue.Size = new System.Drawing.Size(108, 19);
             this.lblMinValue.TabIndex = 1;
             this.lblMinValue.Text = "Valor Minimo: ";
             // 
             // lblMaxValue
             // 
             this.lblMaxValue.AutoSize = true;
+            this.lblMaxValue.Depth = 0;
+            this.lblMaxValue.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMaxValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblMaxValue.Location = new System.Drawing.Point(23, 9);
+            this.lblMaxValue.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMaxValue.Name = "lblMaxValue";
-            this.lblMaxValue.Size = new System.Drawing.Size(76, 13);
+            this.lblMaxValue.Size = new System.Drawing.Size(111, 19);
             this.lblMaxValue.TabIndex = 0;
             this.lblMaxValue.Text = "Valor Maximo: ";
             // 
-            // btnGoBack
+            // btnBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(191, 347);
-            this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(75, 23);
-            this.btnGoBack.TabIndex = 1;
-            this.btnGoBack.Text = "Fechar";
-            this.btnGoBack.UseVisualStyleBackColor = true;
-            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
-            // 
-            // lblModa
-            // 
-            this.lblModa.AutoSize = true;
-            this.lblModa.Location = new System.Drawing.Point(23, 83);
-            this.lblModa.Name = "lblModa";
-            this.lblModa.Size = new System.Drawing.Size(40, 13);
-            this.lblModa.TabIndex = 3;
-            this.lblModa.Text = "Moda: ";
-            // 
-            // lblMediana
-            // 
-            this.lblMediana.AutoSize = true;
-            this.lblMediana.Location = new System.Drawing.Point(23, 111);
-            this.lblMediana.Name = "lblMediana";
-            this.lblMediana.Size = new System.Drawing.Size(54, 13);
-            this.lblMediana.TabIndex = 4;
-            this.lblMediana.Text = "Mediana: ";
-            // 
-            // lblVariancia
-            // 
-            this.lblVariancia.AutoSize = true;
-            this.lblVariancia.Location = new System.Drawing.Point(23, 137);
-            this.lblVariancia.Name = "lblVariancia";
-            this.lblVariancia.Size = new System.Drawing.Size(57, 13);
-            this.lblVariancia.TabIndex = 5;
-            this.lblVariancia.Text = "Variancia: ";
-            // 
-            // lblDesvioPadrao
-            // 
-            this.lblDesvioPadrao.AutoSize = true;
-            this.lblDesvioPadrao.Location = new System.Drawing.Point(23, 168);
-            this.lblDesvioPadrao.Name = "lblDesvioPadrao";
-            this.lblDesvioPadrao.Size = new System.Drawing.Size(83, 13);
-            this.lblDesvioPadrao.TabIndex = 6;
-            this.lblDesvioPadrao.Text = "Desvio Padrao: ";
-            // 
-            // lblAmplitude
-            // 
-            this.lblAmplitude.AutoSize = true;
-            this.lblAmplitude.Location = new System.Drawing.Point(23, 193);
-            this.lblAmplitude.Name = "lblAmplitude";
-            this.lblAmplitude.Size = new System.Drawing.Size(59, 13);
-            this.lblAmplitude.TabIndex = 7;
-            this.lblAmplitude.Text = "Amplitude: ";
-            // 
-            // lblCoeficienteVariacao
-            // 
-            this.lblCoeficienteVariacao.AutoSize = true;
-            this.lblCoeficienteVariacao.Location = new System.Drawing.Point(23, 221);
-            this.lblCoeficienteVariacao.Name = "lblCoeficienteVariacao";
-            this.lblCoeficienteVariacao.Size = new System.Drawing.Size(126, 13);
-            this.lblCoeficienteVariacao.TabIndex = 8;
-            this.lblCoeficienteVariacao.Text = "Coeficiente de Variação: ";
+            this.btnBack.Depth = 0;
+            this.btnBack.Location = new System.Drawing.Point(200, 334);
+            this.btnBack.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Primary = true;
+            this.btnBack.Size = new System.Drawing.Size(85, 36);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Voltar";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FormContinuous
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 382);
-            this.Controls.Add(this.btnGoBack);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.pnlContinuos);
             this.Name = "FormContinuous";
             this.Text = "Dados continuos";
             this.Load += new System.EventHandler(this.FormContinuous_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlContinuos.ResumeLayout(false);
+            this.pnlContinuos.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnGoBack;
-        private System.Windows.Forms.Label lblMaxValue;
-        private System.Windows.Forms.Label lblAverageValue;
-        private System.Windows.Forms.Label lblMinValue;
-        private System.Windows.Forms.Label lblModa;
-        private System.Windows.Forms.Label lblMediana;
-        private System.Windows.Forms.Label lblDesvioPadrao;
-        private System.Windows.Forms.Label lblVariancia;
-        private System.Windows.Forms.Label lblCoeficienteVariacao;
-        private System.Windows.Forms.Label lblAmplitude;
+        private System.Windows.Forms.Panel pnlContinuos;
+        private MaterialSkin.Controls.MaterialLabel lblMaxValue;
+        private MaterialSkin.Controls.MaterialLabel lblAverageValue;
+        private MaterialSkin.Controls.MaterialLabel lblMinValue;
+        private MaterialSkin.Controls.MaterialLabel lblModa;
+        private MaterialSkin.Controls.MaterialLabel lblMediana;
+        private MaterialSkin.Controls.MaterialLabel lblDesvioPadrao;
+        private MaterialSkin.Controls.MaterialLabel lblVariancia;
+        private MaterialSkin.Controls.MaterialLabel lblCoeficienteVariacao;
+        private MaterialSkin.Controls.MaterialLabel lblAmplitude;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBack;
     }
 }

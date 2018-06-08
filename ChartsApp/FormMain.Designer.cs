@@ -28,38 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnContinuous = new System.Windows.Forms.Button();
-            this.btnSeries = new System.Windows.Forms.Button();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
-            // btnContinuous
+            // materialRaisedButton1
             // 
-            this.btnContinuous.Location = new System.Drawing.Point(25, 149);
-            this.btnContinuous.Name = "btnContinuous";
-            this.btnContinuous.Size = new System.Drawing.Size(99, 23);
-            this.btnContinuous.TabIndex = 0;
-            this.btnContinuous.Text = "Dados continuos";
-            this.btnContinuous.UseVisualStyleBackColor = true;
-            this.btnContinuous.Click += new System.EventHandler(this.btnContinuous_Click);
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(29, 101);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(163, 45);
+            this.materialRaisedButton1.TabIndex = 2;
+            this.materialRaisedButton1.Text = "Dados Continuos";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
-            // btnSeries
+            // materialRaisedButton2
             // 
-            this.btnSeries.Location = new System.Drawing.Point(130, 149);
-            this.btnSeries.Name = "btnSeries";
-            this.btnSeries.Size = new System.Drawing.Size(123, 23);
-            this.btnSeries.TabIndex = 1;
-            this.btnSeries.Text = "Dados por frequencia";
-            this.btnSeries.UseVisualStyleBackColor = true;
-            this.btnSeries.Click += new System.EventHandler(this.btnSeries_Click);
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(229, 101);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(153, 45);
+            this.materialRaisedButton2.TabIndex = 3;
+            this.materialRaisedButton2.Text = "Frequencias";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnSeries);
-            this.Controls.Add(this.btnContinuous);
+            this.ClientSize = new System.Drawing.Size(435, 194);
+            this.Controls.Add(this.materialRaisedButton2);
+            this.Controls.Add(this.materialRaisedButton1);
             this.Name = "Main";
+            this.Sizable = false;
             this.Text = "Dados populacionais Brasil 2010";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -68,8 +75,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnContinuous;
-        private System.Windows.Forms.Button btnSeries;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
     }
 }
 

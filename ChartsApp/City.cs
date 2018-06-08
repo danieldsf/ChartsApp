@@ -28,10 +28,16 @@ namespace ChartsApp
                 string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"..\..\municipios.json");
                 string content = String.Join("", File.ReadAllLines(path));
                 INSTANCE = JsonConvert.DeserializeObject<CityRepository>(content);
+                INSTANCE.Filter();
                 INSTANCE.Sort();
             }
 
             return INSTANCE;
+        }
+
+        private void Filter()
+        {
+            Cities = Cities.Where(x => new List<string> { "Bahia", "Ceará", "Pernambuco", "Maranhão", "Sergipe", "Paraíba", "Rio Grande do Norte", "Alagoas", "Piauí" }.Contains(x.State)).ToList();
         }
 
         private void Sort()
@@ -161,41 +167,58 @@ namespace ChartsApp
     {
         private static CitySeriesRepository INSTANCE;
         private List<City> Cities { get; set; }
-        private IDictionary<string, Tuple<int, int>> Series { get; set; }
+        public IDictionary<string, Tuple<int, int>> Series { get; set; }
 
         private CitySeriesRepository()
         {
             this.Cities = CityRepository.getInstance().Cities;
             Series = new Dictionary<string, Tuple<int, int>>();
-
             int times = 0;
 
-            times = this.Cities.Where(c => c.Population <= 1000).Count();
-            Series.Add("0 a 1 mil", Tuple.Create(times, 500));
+            times = this.Cities.Where(c => c.Population <= 200000).Count();
+            Series.Add("0 a 200 mil", Tuple.Create(times, 100000));
 
-            times = this.Cities.Where(c => c.Population <= 10000 && c.Population > 1000).Count();
-            Series.Add("1 mil a 10 mil", Tuple.Create(times, 5500));
+            times = this.Cities.Where(c => c.Population <= 400000 && c.Population > 200000).Count();
+            Series.Add("200 mil a 400 mil", Tuple.Create(times, 300000));
 
-            times = this.Cities.Where(c => c.Population <= 20000 && c.Population > 10000).Count();
-            Series.Add("10 mil a 20 mil", Tuple.Create(times, 15000));
+            times = this.Cities.Where(c => c.Population <= 600000 && c.Population > 400000).Count();
+            Series.Add("400 mil a 600 mil", Tuple.Create(times, 500000));
 
-            times = this.Cities.Where(c => c.Population <= 50000 && c.Population > 20000).Count();
-            Series.Add("20 mil a 50 mil", Tuple.Create(times, 35000));
+            times = this.Cities.Where(c => c.Population <= 800000 && c.Population > 600000).Count();
+            Series.Add("600 mil a 800 mil", Tuple.Create(times, 700000));
 
-            times = this.Cities.Where(c => c.Population <= 100000 && c.Population > 50000).Count();
-            Series.Add("50 mil a 100 mil", Tuple.Create(times, 75000));
+            times = this.Cities.Where(c => c.Population <= 1000000 && c.Population > 800000).Count();
+            Series.Add("800 mil a 1 milhao", Tuple.Create(times, 900000));
 
-            times = this.Cities.Where(c => c.Population <= 200000 && c.Population > 100000).Count();
-            Series.Add("100 mil a 200 mil", Tuple.Create(times, 150000));
+            times = this.Cities.Where(c => c.Population <= 1200000 && c.Population > 1000000).Count();
+            Series.Add("1 milhao a 1,2 millhoes", Tuple.Create(times, 1100000));
 
-            times = this.Cities.Where(c => c.Population <= 500000 && c.Population > 200000).Count();
-            Series.Add("200 mil a 500 mil", Tuple.Create(times, 350000));
+            times = this.Cities.Where(c => c.Population <= 1400000 && c.Population > 1200000).Count();
+            Series.Add("1,2 milhoes a 1,4 milhoes", Tuple.Create(times, 1300000));
 
-            times = this.Cities.Where(c => c.Population <= 1000000 && c.Population > 500000).Count();
-            Series.Add("500 Mil a 1 Milhao", Tuple.Create(times, 750000));
+            times = this.Cities.Where(c => c.Population <= 1600000 && c.Population > 1400000).Count();
+            Series.Add("1,4 Milhoes a 1,6 Milhoes", Tuple.Create(times, 1500000));
+            //
+            times = this.Cities.Where(c => c.Population <= 1800000 && c.Population > 1600000).Count();
+            Series.Add("1,6 milhoes a 1,8 milhoes", Tuple.Create(times, 1700000));
 
-            times = this.Cities.Where(c => c.Population > 1000000).Count();
-            Series.Add(String.Format("1 Milhao a {0}", this.Cities[this.Cities.Count - 1].Population), Tuple.Create(times, 6553460));
+            times = this.Cities.Where(c => c.Population <= 2000000 && c.Population > 1800000).Count();
+            Series.Add("1,8 milhoes a 2 milhoes", Tuple.Create(times, 1900000));
+
+            times = this.Cities.Where(c => c.Population <= 2200000 && c.Population > 2000000).Count();
+            Series.Add("2 milhoes a 2,2 milhoes", Tuple.Create(times, 2100000));
+
+            times = this.Cities.Where(c => c.Population <= 2400000 && c.Population > 2200000).Count();
+            Series.Add("2,2 milhoes a 2,4 milhoes", Tuple.Create(times, 2300000));
+
+            times = this.Cities.Where(c => c.Population <= 2600000 && c.Population > 2400000).Count();
+            Series.Add("2,4 milhoes a 2,6 milhoes", Tuple.Create(times, 2500000));
+
+            times = this.Cities.Where(c => c.Population <= 2800000 && c.Population > 2600000).Count();
+            Series.Add("2,6 Milhoes a 2,8 Milhoes", Tuple.Create(times, 2700000));
+            //
+            times = this.Cities.Where(c => c.Population > 2800000).Count();
+            Series.Add("2,8 Milhoes a 3 Milhoes", Tuple.Create(times, 2900000));
 
             foreach (var entry in Series)
             {
@@ -230,24 +253,81 @@ namespace ChartsApp
             return (from x in Series where x.Value.Item1 == Series.Max(y => y.Value.Item1) select x).Max().Value.Item2;
         }
 
-        public double GetMediana()
+        public int SomatorioFrequencia()
         {
-            return 0;
+            int total = 0;
+
+            foreach (var entry in Series)
+            {
+                total += entry.Value.Item1;
+            }
+
+            return total;
         }
 
-        public double Getvariancia()
+        public double GetMediana()
         {
-            return 0;
+            const float INTERVALO = 200000f;
+
+            //float data = 0 + (((SomatorioFrequencia() / 2) - 0) / Series["0 a 200 mil"].Item1) * 200;
+            float data = (SomatorioFrequencia() / 2f)  * INTERVALO / (float) Series["0 a 200 mil"].Item1;
+            return data;
+        }
+
+        public double GetFrequenciaVsMedia()
+        {
+            double freqVsMedia = 0;
+
+            foreach (var entry in Series)
+            {
+                freqVsMedia += entry.Value.Item1 * entry.Value.Item2;
+            }
+
+            return freqVsMedia;
+        }
+
+        public double GetFrequenciaVsMediaQuadrada()
+        {
+            double freqVsMedia = 0;
+
+            foreach (var entry in Series)
+            {
+                freqVsMedia += entry.Value.Item1 * (entry.Value.Item2 * entry.Value.Item2);
+            }
+
+            return freqVsMedia;
+        }
+
+        public double GetDiferencaSomadaMedia()
+        {
+            double freqVsMedia = 0;
+
+            foreach (var entry in Series)
+            {
+                freqVsMedia += (entry.Value.Item2 - GetMedia()) * (entry.Value.Item2 - GetMedia());
+            }
+
+            return freqVsMedia;
+        }
+
+        public double GetVariancia()
+        {
+            double freqVsMedia = GetFrequenciaVsMedia(); 
+            double freqVsMediaQuadrada = GetFrequenciaVsMediaQuadrada();
+
+            var ammount = (freqVsMediaQuadrada - ((freqVsMedia * freqVsMedia / (float)SomatorioFrequencia())) / ((float)SomatorioFrequencia() - 1));
+
+            return Math.Sqrt(Math.Abs(ammount));
         }
 
         public double GetDesvioPadrao()
         {
-            return 0;
+            return Math.Sqrt(GetDiferencaSomadaMedia()/((float)SomatorioFrequencia()-1));
         }
 
         public double GetCoeficienteVariacao()
         {
-            return 0;
+            return GetDesvioPadrao()/GetMedia();
         }
     }
 }
